@@ -13,7 +13,7 @@ function EndGame() {
 
   return (
     <div className="end-game">
-      <h2>Game Ended</h2>
+      <h2>Game Ended. Player Stats:</h2>
       <ul>
         {Object.entries(playerTimes).map(([name, time]) => (
           <li key={name}>{`${name}'s Time: ${time}`}</li>
