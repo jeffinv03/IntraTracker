@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Add this line
 import PlayerInfo from './components/PlayerInfo.js'
 import "./Players.css";
 
-const teamList = [
+export const teamList = [
   {
     name: 'Rhea',
     position: 'Baller',
@@ -14,6 +14,18 @@ const teamList = [
   {
     name: 'Blaine',
     position: 'Computer',
+    captain: false,
+    playing: false,
+  },
+  {
+    name: 'Jeffin',
+    position: 'Midfield',
+    captain: false,
+    playing: false,
+  },
+  {
+    name: 'Sarthi',
+    position: 'Defender',
     captain: false,
     playing: false,
   }
