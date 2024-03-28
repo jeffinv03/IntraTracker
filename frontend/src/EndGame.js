@@ -1,14 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useGame } from './GameContext'; // Adjust the path as necessary
-import { Button } from 'react-bootstrap'; // Assuming you are using react-bootstrap for buttons
+import { Button } from 'react-bootstrap';
 
 function EndGame() {
-  const { playerTimes } = useGame();
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
+  // Retrieve the player times from localStorage
+  const playerTimes = JSON.parse(localStorage.getItem('playerTimes')) || {};
 
   const goToHome = () => {
-    navigate('/'); // Navigate to the home route
+    navigate('/');
   };
 
   return (
@@ -19,7 +19,7 @@ function EndGame() {
           <li key={name}>{`${name}'s Time: ${time}`}</li>
         ))}
       </ul>
-      <Button onClick={goToHome} className="mt-3">Home</Button> {/* Button to go to home */}
+      <Button onClick={goToHome} className="mt-3">Home</Button>
     </div>
   );
 }
