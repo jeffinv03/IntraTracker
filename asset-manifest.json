@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/intratracker/static/css/main.b7e19632.css",
+    "main.js": "/intratracker/static/js/main.00442b46.js",
+    "static/js/453.8ab44547.chunk.js": "/intratracker/static/js/453.8ab44547.chunk.js",
+    "index.html": "/intratracker/index.html",
+    "main.b7e19632.css.map": "/intratracker/static/css/main.b7e19632.css.map",
+    "main.00442b46.js.map": "/intratracker/static/js/main.00442b46.js.map",
+    "453.8ab44547.chunk.js.map": "/intratracker/static/js/453.8ab44547.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7e19632.css",
+    "static/js/main.00442b46.js"
+  ]
+}
