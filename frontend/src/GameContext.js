@@ -1,25 +1,30 @@
 import React, { createContext, useContext, useState } from 'react';
 
-const GameContext = createContext({
-  playerTimes: {},
-  updatePlayerTimes: () => {},
-});
+const GameContext = createContext();
 
 export const useGame = () => useContext(GameContext);
 
 export const GameProvider = ({ children }) => {
   const [playerTimes, setPlayerTimes] = useState({});
+  const [team, setTeam] = useState([]);
 
   const updatePlayerTimes = (name, time) => {
-    setPlayerTimes(prevTimes => ({
+    setPlayerTimes((prevTimes) => ({
       ...prevTimes,
       [name]: time
     }));
   };
 
-  return (
-    <GameContext.Provider value={{ playerTimes, updatePlayerTimes }}>
-      {children}
-    </GameContext.Provider>
-  );
+  const addPlayerToTeam = (newPlayer) => {
+    setTeam((prevTeam) => [...prevTeam, newPlayer]);
+  };
+
+  const value = {
+    playerTimes,
+    updatePlayerTimes,
+    team,
+    addPlayerToTeam
+  };
+
+  return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
 };

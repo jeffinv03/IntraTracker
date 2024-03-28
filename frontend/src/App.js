@@ -1,16 +1,12 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'; // Import Route and Switch
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from './Home.js';
-import Players from './Players.js';
-import Timer from './Timer.js';
-import AddPlayer from './AddPlayer.js';
+import Home from './Home';
+import Players from './Players';
+import Timer from './Timer';
+import AddPlayerWrapper from './AddPlayerWrapper'; 
 import EndGame from './EndGame';
-import { GameProvider } from './GameContext'; 
-
-
-
-
+import { GameProvider } from './GameContext';
 
 function App() {
   return (
@@ -18,12 +14,11 @@ function App() {
       <GameProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={(<Home/>)} />
-            <Route path='/team' element={(<Players/>)}/>
-            <Route path='/timer' element={(<Timer/>)}/>
-            <Route path='/add-player' element={(<AddPlayer/>)}/>
+            <Route path="/" element={<Home />} />
+            <Route path="/team" element={<Players />} />
+            <Route path="/timer" element={<Timer />} />
+            <Route path="/add-player" element={<AddPlayerWrapper />} />
             <Route path="/endGame" element={<EndGame />} />
-
           </Routes>
         </BrowserRouter>
       </GameProvider>
